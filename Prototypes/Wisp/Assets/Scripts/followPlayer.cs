@@ -7,7 +7,9 @@ public class followPlayer : MonoBehaviour
 {
     public Transform target;
     NavMeshAgent nav; 
-    public 
+    public Transform homeLocation; 
+    public bool isFollowing; 
+    public GameObject menu; 
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,32 @@ public class followPlayer : MonoBehaviour
     {
         // if (wispState == follow)
         // {
-        if (Input.GetKeyDown(KeyCode.E)) {
-        Debug.Log("E key was pressed."); nav.SetDestination(target.position);
-    }
+        if (isFollowing == true){
+        nav.SetDestination(target.position);
+        }
+
        // }
+
+    }
+    void OnTriggerStay (){
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+           menu.SetActive(true); 
+           Debug.Log("eeeeeed.");
+        }
+    }
+   public void FollowPlayer ()
+    {
+        Debug.Log("Follow was pressed.");
+        nav.SetDestination(target.position);
+        isFollowing = true; 
+        menu.SetActive(false); 
+    }
+      public void GoHome ()
+    {
+        Debug.Log("dismiss was pressed.");
+        nav.SetDestination(homeLocation.position);
+        isFollowing = false; 
+        menu.SetActive(false); 
     }
 }
