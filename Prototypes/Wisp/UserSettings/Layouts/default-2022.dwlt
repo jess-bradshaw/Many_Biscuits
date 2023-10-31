@@ -479,10 +479,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 33.799988}
-    m_SelectedIDs: 325c0000
-    m_LastClickedID: 23602
-    m_ExpandedIDs: 00000000265c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 3e5c0000
+    m_LastClickedID: 23614
+    m_ExpandedIDs: 00000000325c0000ba600000c2600000ea60000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -510,7 +510,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000265c0000
+    m_ExpandedIDs: 00000000325c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -649,24 +649,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c6faffff
-      m_LastClickedID: -1338
-      m_ExpandedIDs: a8faffffc2faffffc6faffff30fbffff32fbffffe05a0000
+      scrollPos: {x: 0, y: 141}
+      m_SelectedIDs: ea6c0000
+      m_LastClickedID: 27882
+      m_ExpandedIDs: 9062ffff9462ffff16dbffff18dbffffc6faffff32fbfffffa680000806a0000d46a0000c46b0000e26b0000146c0000586e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: WispHome
-        m_OriginalName: WispHome
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1338
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -714,7 +714,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -170, y: -26.400024}
+      snapOffset: {x: -171, y: -26.400024}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -1019,9 +1019,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0.6165025, z: 0}
+    m_Target: {x: -2.905584, y: 0.9081132, z: 3.9470105}
     speed: 2
-    m_Value: {x: 0, y: 0.6165025, z: 0}
+    m_Value: {x: -2.905584, y: 0.9081132, z: 3.9470105}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1067,20 +1067,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.14974412, y: -0.0023765212, z: 0.00035978988, w: -0.98872423}
+    m_Target: {x: -0.30520844, y: -0.06079931, z: 0.019534344, w: -0.95015603}
     speed: 2
-    m_Value: {x: -0.14974378, y: -0.002376516, z: 0.00035978906, w: -0.98872197}
+    m_Value: {x: -0.30520436, y: -0.0607985, z: 0.019534083, w: -0.95014334}
   m_Size:
-    m_Target: 1.6768491
+    m_Target: 8.5095415
     speed: 2
-    m_Value: 1.6768491
+    m_Value: 8.5095415
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.001
+    m_SpeedNormalized: 0
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1

@@ -4,47 +4,29 @@ using UnityEngine;
 
 public class WispsStates : MonoBehaviour
 {
-    Animator wisp_Animator;
-    float wisp_CurrentState; 
+    public WispBaseState currentState; 
+    public WispFollowState FollowingState = new WispFollowState();
+    public WispPetState PetState = new WispPetState(); 
+    public WispIdleState IdleState = new WispIdleState(); 
+    public WispIdleWanderState WanderState = new WispIdleWanderState(); 
     
-    
-    
-    // Start is called before the first frame update
+    // Start is called before the first frame update 
     void Start()
     {
-        wisp_Animator = gameObject.GetComponent<Animator>();
-
+            // Staring State for the state machine     
+        currentState = IdleState; 
+            //"this" is a reference to the context (this exact monobehaviour script)
+        currentState.EnterState(this);
     }
-
-    // Update is called once per frame
+    // Update is caleld once per frame 
     void Update()
     {
-        if (wisp_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            Debug.Log("is Idle"); 
-        }
+        currentState.UpdateState(this); 
     }
 
-    public void wispStates()
+    public void SwitchState(WispBaseState state)
     {
-    // public AnimatorStateInfo = GetCurrentAnimatorStateInfo(); 
-        //   if (sleeping)
-        { //wake up
-        }
-
-      //  if (idle)
-        {
-            //idle dance after a while move idle  
-        }
-
-        // if (following)
-        { 
-        //follow 
-        }
+        currentState = state; 
+        state.EnterState(this); 
     }
-
-
-
-
-
 }
