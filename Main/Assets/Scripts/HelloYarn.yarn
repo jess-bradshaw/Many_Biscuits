@@ -1,0 +1,58 @@
+title: Start
+position: -110,-336
+---
+What is this place?
+Why am I cold?
+Who am I?
+....
+Maybe I can find some answers!
+
+===
+title: GraveStone
+position: -241,-125
+---
+What is this?
+It looks dusty
+Maybe if I clean it up I'll be able to read what it says.
+===
+title: Home
+position: -105,49
+---
+Hello?
+Hello, hello, hello,
+Strange echo!
+strange echo echo echo
+===
+title: Wisp
+position: 20,-134
+---
+You're a good boy
+Wisp: I'm a good boy!
+<<EmotionUp EventSystem>>
+You're a very good boy
+Wisp: Im a very very good boy
+<<EmotionUp EventSystem>>
+Who's a good boy?
+Wisp: I'm a good boy
+<<EmotionUp EventSystem>>
+Wisp: I'm so happy
+<<EmotionUp EventSystem>>
+
+===
+title: WispBranch
+position: 166,43
+---
+Wisp: This feels right
+Who are you?
+Wisp: I dont know, but I'm happy here.
+How did you get here?
+Wisp: I don't remeber, who are you?
+    -> I don't know
+        Wisp: Oh, you're like me then 
+        I guess so
+        Wisp: Well, if you need me, I'll be right here
+        Take care
+    -> I'm still trying to decide
+        Wisp: Well, when you decide, come tell me
+        I will
+===
