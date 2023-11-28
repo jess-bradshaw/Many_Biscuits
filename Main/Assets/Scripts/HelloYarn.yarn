@@ -27,17 +27,21 @@ title: Wisp
 position: 20,-134
 ---
 You're a good boy
-Wisp: I'm a good boy!
+Toby: I'm a good boy!
 <<EmotionUp EventSystem>>
-You're a very good boy
-Wisp: Im a very very good boy
+Toby: Im a very very good boy
 <<EmotionUp EventSystem>>
 Who's a good boy?
-Wisp: I'm a good boy
+Toby: I'm a good boy
 <<EmotionUp EventSystem>>
-Wisp: I'm so happy
-<<EmotionUp EventSystem>>
-
+Toby: I'm so happy
+<<EmotionDown EventSystem>>
+===
+title: Wisp50
+position: 20,-134
+---
+How are you?
+Toby: Im 50
 ===
 title: WispBranch
 position: 166,43
