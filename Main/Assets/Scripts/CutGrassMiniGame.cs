@@ -18,6 +18,7 @@ public class CutGrassMiniGame : MonoBehaviour
     [SerializeField] private float ReturnDelay = 2.0f;
     public Canvas MiniGameCanvas;
     public GameObject TriggerObject;
+    public WispEmotion emotionGain;
     //remove comment to add audio
     //public AudioClip hitSound;
     //public AudioClip missSound;
@@ -60,6 +61,7 @@ public class CutGrassMiniGame : MonoBehaviour
                     CutGrass.gameObject.SetActive(true);
                     CutCounter = 0; // Reset the counter
                     TriggerObject.SetActive(false);
+                    IncreaseWispEmotion();
                     StartCoroutine(ReturnToGame());
 
                 }
@@ -78,5 +80,11 @@ public class CutGrassMiniGame : MonoBehaviour
     {
         yield return new WaitForSeconds(ReturnDelay);
         MiniGameCanvas.gameObject.SetActive(false);
+    }
+
+    public void IncreaseWispEmotion()
+    {
+        emotionGain.IncEmotion(emotionGain.heartInc);
+        Debug.Log("emotion up");
     }
 }
