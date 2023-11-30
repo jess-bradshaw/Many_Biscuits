@@ -9,7 +9,6 @@ public class WispEmotion : MonoBehaviour
     public int currentHeart;
     public int startHeart = 0;
     public int heartInc = 25;
-    public int heartDec = 25;
     public EmotionBar emotion;
 
     
@@ -30,17 +29,10 @@ public class WispEmotion : MonoBehaviour
         }*/
     }
    
-    public void IncEmotion(int Emotion)
+    public void TakeEmotion(int Emotion)
     {
 
         currentHeart += Emotion;
-        emotion.SetHeart(currentHeart);
-    }
-
-    public void DecEmotion(int Emotion)
-    {
-
-        currentHeart -= Emotion;
         emotion.SetHeart(currentHeart);
     }
 }

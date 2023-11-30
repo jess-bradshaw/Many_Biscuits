@@ -1,67 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &504774332910891075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7322511065327117577}
-  - component: {fileID: 986509847474127335}
-  - component: {fileID: 6860795865826824837}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7322511065327117577
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504774332910891075}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 4.22, z: -0.11}
-  m_LocalScale: {x: 2.2551925, y: 12.773658, z: 2.2551925}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1855261807849411862}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &986509847474127335
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504774332910891075}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6860795865826824837
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504774332910891075}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2176804005148881661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,7 +85,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-<<<<<<< HEAD:Main/Assets/Art Assets/Prefabs/Pillar.prefab
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d5770ff22a154b41b8045f1080a337a,
@@ -182,18 +119,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.763935, y: 11.792831, z: 2.7035139}
   m_Center: {x: 0.14490777, y: 3.7220032, z: -0.10646069}
-=======
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d5770ff22a154b41b8045f1080a337a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7322511065327117577}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0d5770ff22a154b41b8045f1080a337a, type: 3}
---- !u!4 &1855261807849411862 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d5770ff22a154b41b8045f1080a337a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2176804005148881661}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> main:Main/Assets/Art Assets/Models/Prefabs/Pillar.prefab
