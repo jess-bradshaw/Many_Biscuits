@@ -1,10 +1,125 @@
 title: Start
-position: -203,-262
+position: -868,-260
 ---
 What is this place?
-Why am I cold?
-Who am I?
-....
-Maybe I can find some answers!
-
+Where is everyone?
+Maybe I can find some answers
+What are all these gravestones?
+===
+title: Goose
+position: -726,-484
+---
+<<if visited("Goose")>>
+<<jump GooseReturn>>
+<<else>>
+Goose: Hi! I haven't seen you before. I'm Goose.
+Pleased to meet you Goose.
+Are you a spirit or something?
+Goose: I could be?
+Goose: Whats a something?
+I don't know really.
+Goose: I was something, I think.
+That sounds very mysterious.
+Do you remember anything?
+Goose: Bits more than anything. Warmth, joy,
+Goose: A sense of belonging, and a longing for someone or something. It's all very hazy.
+That must be hard, not knowing.
+Goose: It is, I get a little sad if I think about it.
+Can I do something to help?
+Goose: Well, it is looking a little messy around here. Could you help?
+I'll see what I can do.
+Goose: Don't go too far, I've missed talking.
+    -> I won't, don't worry.
+        Goose: Thank you, that makes me happy
+        <<EmotionUp EventSystem>>
+        Me too.
+    -> I'll try not to okay?
+        Goose: Okay....i guess.
+        <<EmotionDown EventSystem>>
+        I won't go far.
+<<endif>>
+===
+title: GooseReturn
+position: -439,-483
+---
+<<if visited("GooseReturn")>>
+<<jump GooseCheese>>
+<<else>>
+Goose: Hey, you're back
+Hi Goose.
+Goose: I like what you've done, 
+Goose: It's really helped the feng shui.
+Feng Shui?
+Goose: Something I remember hearing.
+Goose: I never understood its placement really.
+Goose: I think....
+It's okay, I'm here.
+Do you remember anything else?
+Goose: Not much, just bits.
+Goose: But seeing what you've done...
+Goose: Well...it... 
+Goose: Unlocked...
+Goose: Something?
+In a good way?
+Goose: I think so yeah. 
+Well, maybe if i keep exploring
+I can help unlock more?
+Goose: That sounds like a great idea
+Well, then I shall venture forth.
+Goose: Yay
+I'll see you soon okay.
+Goose: Wait
+What is it?
+Goose: Don't forget about me.
+    -> I won't.
+        Goose: Okay
+    -> Try and make me.
+        Goose: See you soon.
+        Definetly
+        <<EmotionUp EventSystem>>
+<<endif>>
+===
+title: GooseCheese
+position: -165,-486
+---
+<<if visited("GooseCheese")>>
+<<jump GooseRemembers>>
+<<else>>
+sad emotions story here
+I found something text
+    -> cheese
+        Goose: 
+        <<EmotionUp EventSystem>>
+    -> Feather
+        Goose: What do i do with that?
+        <<EmotionDown EventSystem>>
+<<endif>>
+===
+title: GooseRemembers
+position: 131,-486
+---
+<<if visited("GooseRemembers")>>
+<<jump GooseHears>>
+<<else>>
+asd
+<<endif>>
+===
+title: GooseHears
+position: 420,-484
+---
+<<if visited("GooseHears")>>
+<<jump GooseReady>>
+<<else>>
+asd
+<<endif>>
+===
+title: GooseReady
+position: 712,-483
+---
+ghj
+===
+title: GooseGoodbye
+position: 999,-484
+---
+ghj
 ===
