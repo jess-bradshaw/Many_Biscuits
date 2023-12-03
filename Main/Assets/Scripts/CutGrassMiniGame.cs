@@ -18,10 +18,12 @@ public class CutGrassMiniGame : MonoBehaviour
     [SerializeField] private float ReturnDelay = 2.0f;
     public Canvas MiniGameCanvas;
     public GameObject TriggerObject;
+    public WispEmotion emotionGain;
     //remove comment to add audio
-    //public AudioClip hitSound;
-    //public AudioClip missSound;
-    //private AudioSource audioSource;
+    public AudioClip hitSound;
+    public AudioClip missSound;
+    public AudioClip CompleteSound;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +53,7 @@ public class CutGrassMiniGame : MonoBehaviour
                 CutCounter++;
                 Debug.Log("Hit " + CutCounter);
                 //add audio if you want
-                //audioSource.PlayOneShot(hitSound);
+                audioSource.PlayOneShot(hitSound);
 
                 if (CutCounter == CutRequired)
                 {
@@ -60,6 +62,8 @@ public class CutGrassMiniGame : MonoBehaviour
                     CutGrass.gameObject.SetActive(true);
                     CutCounter = 0; // Reset the counter
                     TriggerObject.SetActive(false);
+                    audioSource.PlayOneShot(CompleteSound);
+                    IncreaseWispEmotion();
                     StartCoroutine(ReturnToGame());
 
                 }
@@ -68,7 +72,7 @@ public class CutGrassMiniGame : MonoBehaviour
             {
                 Debug.Log("Miss");
                 //add audio if you want
-                //audioSource.PlayOneShot(missSound);
+                audioSource.PlayOneShot(missSound);
             }
         }
     }
@@ -78,5 +82,11 @@ public class CutGrassMiniGame : MonoBehaviour
     {
         yield return new WaitForSeconds(ReturnDelay);
         MiniGameCanvas.gameObject.SetActive(false);
+    }
+
+    public void IncreaseWispEmotion()
+    {
+        emotionGain.IncEmotion(emotionGain.heartInc);
+        Debug.Log("emotion up");
     }
 }

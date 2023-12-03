@@ -1,0 +1,377 @@
+title: Start
+position: -972,-483
+---
+What is this place?
+Where is everyone?
+Maybe I can find some answers
+What are all these gravestones?
+===
+title: Goose
+position: -726,-484
+---
+<<if visited("Goose")>>
+<<jump GooseReturn>>
+<<else>>
+Goose: Hi! I haven't seen you before. I'm Goose.
+Pleased to meet you Goose.
+Are you a spirit or something?
+Goose: I could be?
+Goose: Whats a something?
+I don't know really.
+Goose: I was something, I think.
+That sounds very mysterious.
+Do you remember anything?
+Goose: Bits more than anything. Warmth, joy,
+Goose: A sense of belonging, and a longing for someone or something. It's all very hazy.
+That must be hard, not knowing.
+Goose: It is, I get a little sad if I think about it.
+Can I do something to help?
+Goose: Well, it is looking a little messy around here. Could you help?
+I'll see what I can do.
+Goose: Don't go too far, I've missed talking.
+    -> I won't, don't worry.
+        Goose: Thank you, that makes me happy
+        <<EmotionUp EventSystem>>
+        Me too.
+    -> I'll try not to okay?
+        Goose: Okay....i guess.
+        <<EmotionDown EventSystem>>
+        I won't go far.
+<<endif>>
+===
+title: GooseReturn
+position: -439,-483
+---
+<<if visited("GooseReturn")>>
+<<jump GooseCheese>>
+<<else>>
+Goose: Hey, you're back
+Hi Goose.
+Goose: I like what you've done, 
+Goose: It's really helped the feng shui.
+Feng Shui?
+Goose: Something I remember hearing.
+Goose: I never understood its placement really.
+Goose: I think....
+It's okay, I'm here.
+Do you remember anything else?
+Goose: Not much, just bits.
+Goose: But seeing what you've done...
+Goose: Well...it... 
+Goose: Unlocked...
+Goose: Something?
+In a good way?
+Goose: I think so yeah. 
+Well, maybe if i keep exploring
+I can help unlock more?
+Goose: That sounds like a great idea
+Well, then I shall venture forth.
+Goose: Yay
+I'll see you soon okay.
+Goose: Wait
+What is it?
+Goose: Don't forget about me.
+    -> I won't.
+        Goose: Okay
+    -> Try and make me.
+        Goose: See you soon.
+        Definetly
+        <<EmotionUp EventSystem>>
+<<endif>>
+===
+title: GooseCheese
+position: -165,-486
+---
+<<if visited("GooseCheese")>>
+<<jump GooseRemembers>>
+<<else>>
+Goose: Did you find anything?
+I found a strange area.
+Goose: Strange?
+It's like a arch way, but couldn't work out what it does.
+Goose: Where was it?
+Through the gate, I found a key someone had burried.
+Goose: The gates open?
+Yes, I unlocked it. Why?
+Goose: Its been locked as long as I can remember.
+There isn't much there at the moment, but there were some other wisps who seemed happy it was open.
+Goose: Maybe they got trapped when it was closed.
+Maybe, but they are free now to roam.
+Goose: Maybe I'll go take a look, but I'm happy here now. 
+<<EmotionUp EventSystem>>
+I did find some other things though!
+Goose: Really?
+Yes, would you like..
+    -> Some cheese?
+        Goose: OOOh, cheese, why do I remember cheese?
+        Maybe from before?
+        Goose: wait....do you hear that?
+        Hear what?
+        Goose: Listen.
+        <<EmotionSound EventSystem>>
+        What was that?
+        Goose: A voice...on the wind. Calling. But who too?
+        Maybe it was for you?
+        Goose: But why?
+        I don't know. I'll see if I can find out.
+        <<EmotionUp EventSystem>>
+    -> Some nuts
+        Goose: Those don't look very nice.
+        <<EmotionDown EventSystem>>
+        Goose: I don't think i can actually eat.
+        Does it help you remember anything? 
+        Goose: I dont think so no.
+        <<EmotionDown EventSystem>> 
+<<endif>>
+===
+title: GooseRemembers
+position: 131,-486
+---
+<<if visited("GooseRemembers")>>
+<<jump GooseReady>>
+<<else>>
+Goose: Hey, where have you been?
+I've been speaking to the other wisps.
+They gave me some tips on how to help you.
+Goose: Help me?
+To remember!
+Goose: Okay, but im worried.
+It will be okay.
+I'm here.
+Goose: Thank you.
+Think of a emotion and focus on it.
+Goose: Which should i Choose?
+    -> Happy
+        Goose: Well, cheese made me happy.
+        Thats a good idea.
+        Goose: I can see it on a table, it's too high for me.
+        Goose: But a hand is giving me some.
+        How does it taste?
+        Goose: Its really creamy.
+        Anything else?
+        Goose: Yes, I'm outside now.
+        Goose: It's so pretty and theres are these tree's.
+        Goose: And all these other things.
+        Other things?
+        Goose: In the air, lots of them, everywhere.
+        Smells?
+        Goose: Yes, smells, oh wow, I can smell all the things.
+        How do you feel?
+        Goose: Happy, excited....
+        Goose: Wait, there's something else.
+        What is it?
+        Goose: I can hear my name being called.
+        <<EmotionSound2 EventSystem>>
+        I hear it too.
+        Goose: What does it mean?
+        I'm not sure.
+        Goose: I think I need some time.
+        Okay, shall I come back?
+        Goose: I'll meet you at the gate when im ready.
+        Take care Goose.
+    -> Sad
+        Goose: I don't want to be sad.
+        Then focus on the other.
+        <<EmotionDown EventSystem>> 
+        What made you happy?
+        Goose: Well, cheese made me happy.
+        Thats a good idea.
+        Goose: I can see it on a table, it's too high for me.
+        Goose: But a hand is giving me some.
+        How does it taste?
+        Goose: Its really creamy.
+        Anything else?
+        Goose: Yes, I'm outside now.
+        Goose: It's so pretty and theres are these tree's.
+        Goose: And all these other things.
+        Other things?
+        Goose: In the air, lots of them, everywhere.
+        Smells?
+        Goose: Yes, smells, oh wow, I can smell all the things.
+        How do you feel?
+        Goose: Happy, excited....
+        Goose: Wait, there's something else.
+        What is it?
+        Goose: I can hear my name being called.
+        <<EmotionSound2 EventSystem>>
+        I hear it too.
+        Goose: What does it mean?
+        I'm not sure.
+        Goose: I think I need some time.
+        Okay, shall I come back?
+        Goose: Yes please.
+        Take care Goose.
+<<endif>>
+===
+title: GooseReady
+position: 712,-483
+---
+Goose: I had some time to think.
+Goose: It was different to before.
+Why?
+Goose: Well, now I remember things.
+Goose: I don't remember how I got here.
+Goose: Or how long I've been here.
+Goose: Time doesn't seem to work here.
+Goose: But now, I have a sense of belonging.
+Goose: But its missing something.
+I'm here.
+Goose: This is something else.
+Goose: I think I feel myself being pulled to the arch.
+Should we go and see whats there?
+Goose: I think so, but I'm scared.
+Don't be, I'll be with you every step.
+Goose: Thank you.
+===
+title: GooseGoodbye
+position: 999,-484
+---
+Goose: I think, I think..
+What is it?
+Goose: I think it's time for me to go.
+Where?
+Goose: Across the rainbow bridge.
+Where does it go?
+Goose: I think to a place where I'll be with my friends and owner.
+Goose: I wont be alone ever again.
+Goose: But...
+But what?
+Goose: You wont be there.
+It's okay, I just helped guide you to where you needed to go.
+Goose: Will I see you again?
+Maybe, think of it as a new adventure with no end.
+Goose: I like that idea.
+Goose: You know, before I go.
+Goose: I want to share my last memory with you.
+I'd love to hear it, Goose.
+Goose: It was a winter evening, snowflakes gently falling.
+Goose: My owner and I were sitting by the fireplace. 
+Goose: They were reading a book, and I was curled up next to them. 
+Goose: It was so peaceful, I was so happy.
+That sounds like a perfect moment.
+Goose: It was, it reminded me of our time together.
+Goose: One thing.
+Yes?
+Goose: As you help other wisps, remember.
+Goose: It's not just about guiding them to the next place.
+Goose: It's about understanding their stories, their emotions. It's about closure.
+Goose: Like how you helped me.
+I understand. I'll try my best.
+Goose: I know you will.
+I'm going to miss you, Goose.
+Goose: And I'll miss you too
+I hope you find your forever home too.
+<<CrossOverSound EventSystem>>
+===
+title: Whisper
+position: 999,-484
+---
+<<if visited("Whisper")>>
+<<jump WhisperReturn>>
+<<else>>
+Whisper: What do you want?
+To help, if you'll let me.
+Whisper: Why would I need help?
+Whisper: I'm purfectly content here.
+I bet you see everything where you are.
+Whisper: Maybe I do, maybe I don't.
+Did you see something?
+Whisper: Why would I tell you?
+<<endif>>
+===
+title: WhisperReturn
+---
+Whisper: You again!
+Hi Whisper, I bet you really miss a warm fire?
+Whisper: What did Tinker tell you?
+Just if you help me, I can help you.
+Whisper: How can you help me?
+If I can find a key, I can open the house again.
+Whisper: A warm fire to curl near would be bliss.
+Well, if you help, I'll make sure its a purfect heat.
+Whisper: Well...
+Whisper: Okay.
+What did you see?
+Whisper: I saw a wisp a long time ago, go past with a shiny thing.
+Whisper: I think it burried it over by the dead tree.
+Was it a key?
+Whisper: Maybe.
+I'll go have a look.
+Whisper: I look forward to that warm fire.
+Thank you.
+===
+title: Tinker
+position: 999,-484
+---
+Tinker: Oh, Hey, You, Hi!
+You very happy
+Tinker: It's been a while since I had someone else to talk to.
+What about Whisper?
+Tinker: Oh, they arent very talkative.
+Why not?
+Tinker: They've been very upset since they got locked out of the house.
+Whats in the house?
+Tinker: All the creature comforts, a fire, a rug, a chair.
+Tinker: Things to sit on high.
+What in the house for Whsiper?
+Tinker: The fire, they would hover in front of it all the time.
+Who's home is it?
+Tinker: Well, yours.
+Mine?
+Tinker: Well, I think so.
+Tinker: It looks different to how I remember it.
+How long have you been here?
+Tinker: I don't know. Its hard to keep a track on.
+The house is locked, I think I need a key.
+Have you seen one around?
+Tinker: Oh, I can't help you there.
+Why not?
+Tinker: I dont see very well.
+Oh, I'm sorry.
+Tinker: It's okay. It's been that way as long as I remember.
+I'll see if I can find the key.
+Take care Tinker.
+Tinker: Bye.
+===
+title: Villemo
+position: 999,-484
+---
+filler text
+===
+title: Toby
+position: 999,-484
+---
+filler text
+===
+title: Home
+position: 999,-484
+---
+<<if visited("Home")>>
+<<jump HomeKey>>
+<<else>>
+It's locked.
+I think I need a key.
+<<endif>>
+===
+title: HomeKey
+position: 999,-484
+---
+It's the wrong key.
+I wonder what else it opens.
+===
+title: Gate
+position: 999,-484
+---
+<<if visited("Gate")>>
+<<jump GateKey>>
+<<else>>
+It's locked.
+I think I need a key.
+<<endif>>
+===
+title: GateKey
+position: 999,-484
+---
+That worked.
+I wonder where this leads?
+===
