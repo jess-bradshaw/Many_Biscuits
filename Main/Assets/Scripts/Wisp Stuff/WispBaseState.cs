@@ -1,8 +1,9 @@
 using UnityEngine;
 
+
 public abstract class WispBaseState
 {
-   public abstract void EnterState (WispsStates wisp);
+   public abstract void EnterState (WispsStates wisp );
 
    public abstract void UpdateState(WispsStates wisp); 
 

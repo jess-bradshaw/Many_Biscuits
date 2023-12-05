@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class WispPetState : MonoBehaviour
+public class WispPetState : WispBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState (WispsStates wisp)
     {
+        Debug.Log("Hello I am being pet.");   
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState (WispsStates wisp)
     {
-        
+       
     }
 }

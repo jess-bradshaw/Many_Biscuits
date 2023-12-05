@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WispsStates : MonoBehaviour
 {
     public WispBaseState currentState; 
+    
     public WispFollowState FollowingState = new WispFollowState();
     public WispPetState PetState = new WispPetState(); 
     public WispIdleState IdleState = new WispIdleState(); 
     public WispIdleWanderState WanderState = new WispIdleWanderState(); 
     public int buttonState; 
+  
     
     // Start is called before the first frame update 
     void Start()
@@ -23,13 +26,13 @@ public class WispsStates : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this); 
-        Debug.Log(currentState); 
+      //  Debug.Log(currentState); 
     }
     
     
     public void PetInput()
     {
-    // currentState = PetState; 
+    currentState = PetState; 
     }
     public void TalkInput()
     {

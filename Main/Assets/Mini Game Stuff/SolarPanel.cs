@@ -13,7 +13,7 @@ public class SolarPanel : MonoBehaviour {
 
     private Texture2D dirtMaskTexture;
     private bool isFlipped;
-    private Animation solarAnimation;
+   // private Animation solarAnimation;
     private float dirtAmountTotal;
     private float dirtAmount;
     private Vector2Int lastPaintPixelPosition;
@@ -24,7 +24,7 @@ public class SolarPanel : MonoBehaviour {
         dirtMaskTexture.Apply();
         material.SetTexture("_DirtMask", dirtMaskTexture);
 
-        solarAnimation = GetComponent<Animation>();
+       // solarAnimation = GetComponent<Animation>();
 
         dirtAmountTotal = 0f;
         for (int x = 0; x < dirtMaskTextureBase.width; x++) {
@@ -99,15 +99,6 @@ public class SolarPanel : MonoBehaviour {
                 //*/
 
                 dirtMaskTexture.Apply();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            isFlipped = !isFlipped;
-            if (isFlipped) {
-                solarAnimation.Play("SolarPanelFlip");
-            } else {
-                solarAnimation.Play("SolarPanelFlipBack");
             }
         }
     }
