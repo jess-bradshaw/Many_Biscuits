@@ -35,7 +35,8 @@ public class SolarPanel : MonoBehaviour {
         dirtAmount = dirtAmountTotal;
 
       //  FunctionPeriodic.Create(() => {
-      //      uiText.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
+          uiText.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
+          Debug.Log("dir amount:" + dirtAmountTotal); 
       //  }, .03f);
     }
 
@@ -49,7 +50,7 @@ public class SolarPanel : MonoBehaviour {
                 int pixelY = (int)(textureCoord.y * dirtMaskTexture.height);
 
                 Vector2Int paintPixelPosition = new Vector2Int(pixelX, pixelY);
-                //Debug.Log("UV: " + textureCoord + "; Pixels: " + paintPixelPosition);
+               // Debug.Log("UV: " + textureCoord + "; Pixels: " + paintPixelPosition);
 
                 int paintPixelDistance = Mathf.Abs(paintPixelPosition.x - lastPaintPixelPosition.x) + Mathf.Abs(paintPixelPosition.y - lastPaintPixelPosition.y);
                 int maxPaintDistance = 7;
@@ -97,7 +98,8 @@ public class SolarPanel : MonoBehaviour {
                     }
                 }
                 //*/
-
+uiText.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
+          Debug.Log("dir amount:" + dirtAmountTotal); 
                 dirtMaskTexture.Apply();
             }
         }
