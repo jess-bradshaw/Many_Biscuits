@@ -18,4 +18,19 @@ public class RavenScare : MonoBehaviour
 
         //if raven present and Wisp in trigger hold then scared emote. + decrease emotions by one level only. 
     }
+
+
+    public GameObject particlePoof; 
+    public GameObject standingRaven; 
+    public GameObject flyingRaven; 
+
+    void OnTriggerEnter ()
+    {
+       
+           particlePoof.SetActive(true); 
+           standingRaven.SetActive(false); 
+           flyingRaven.SetActive(true); 
+           // increase wisp emotions?
+    }
+    
 }
