@@ -8,20 +8,20 @@ float idleCountdown = 10.0f;
 public override  void EnterState (WispsStates wisp)
 
 	{
-		Debug.Log("Hello I am idling."); 
+		//Debug.Log("Hello I am idling."); 
 
    }
    public override void UpdateState (WispsStates wisp)
    {
-	     if (idleCountdown >=0)
-		 {
-			 idleCountdown -= Time.deltaTime; 
+	    // if (idleCountdown >=0)
+		// {
+		//	 idleCountdown -= Time.deltaTime; 
 			// Debug.Log(idleCountdown); 
-		 }
-        else {
-			wisp.SwitchState(wisp.WanderState); 
-			idleCountdown = 10.0f; 
-        }
+		// }
+        //else {
+		//	wisp.SwitchState(wisp.WanderState); 
+		//	idleCountdown = 10.0f; 
+       // }
    }
    private void OnTriggerEnter(Collider collider)
    {

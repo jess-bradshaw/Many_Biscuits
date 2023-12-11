@@ -36,7 +36,7 @@ public class SolarPanel : MonoBehaviour {
 
       //  FunctionPeriodic.Create(() => {
           uiText.text = Mathf.RoundToInt(GetDirtAmount() * 100f) + "%";
-          Debug.Log("dir amount:" + dirtAmountTotal); 
+        //  Debug.Log("dir amount:" + dirtAmountTotal); 
       //  }, .03f);
     }
 

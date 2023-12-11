@@ -6,7 +6,7 @@ public class WispIdleWanderState : WispBaseState
     public GameObject menu; 
      public override void EnterState (WispsStates wisp)
     {
-        Debug.Log("Hello I am wandering."); 
+       // Debug.Log("Hello I am wandering."); 
         //something in here to track time? 
     }
     public override void UpdateState (WispsStates wisp)
