@@ -12,6 +12,7 @@ public class PerspectiveCharController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private KeyCode actionKey = KeyCode.E; //default to E key
     private Vector3 _input;
+    public AudioSource walkingSounds; 
 
     private void Update()
     {
@@ -46,10 +47,12 @@ public class PerspectiveCharController : MonoBehaviour
     private void Move()
     {
         _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
+        
         // when move happens, set blend value to 1
         if (_input != Vector3.zero)
         {
             animator.SetFloat("Blend", 1f);
+         //   walkingSounds.Play(); 
         }
         else
         {
