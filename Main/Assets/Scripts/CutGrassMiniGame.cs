@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class CutGrassMiniGame : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class CutGrassMiniGame : MonoBehaviour
     [SerializeField] private float HitAreaA = 100.0f;
     [SerializeField] private float HitAreaB = 100.0f;
     [SerializeField] private Image SkillBar;
-    [SerializeField] private Image LongGrass;
-    [SerializeField] private Image CutGrass;
+    [SerializeField] private GameObject LongGrass;
+    public bool useFoundItem;
+    [SerializeField] private GameObject FoundItem;
+    //[SerializeField] private Image CutGrass;
     public KeyCode actionKey = KeyCode.Space;
     private bool isIncreasing = true;
     private int CutCounter = 0;
@@ -24,14 +27,24 @@ public class CutGrassMiniGame : MonoBehaviour
     public AudioClip missSound;
     public AudioClip CompleteSound;
     public AudioSource audioSource;
+    public ParticleSystem HitEffect;
+    public ParticleSystem CompleteEffect;
+    public PerspectiveCharController playerController;
+    public Animator playerAnimator;
+    public CinemachineVirtualCamera cinemachineCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         SkillBar.fillAmount = 0f;
-        CutGrass.gameObject.SetActive(false);
+        //CutGrass.gameObject.SetActive(false);
         LongGrass.gameObject.SetActive(true);
         CutCounter = 0;
+        if (playerController != null)
+        {
+            playerController.enabled = false;
+            playerAnimator.SetFloat("Blend", 0f);
+        }
     }
 
     // Update is called once per frame
@@ -53,17 +66,23 @@ public class CutGrassMiniGame : MonoBehaviour
                 CutCounter++;
                 Debug.Log("Hit " + CutCounter);
                 //add audio if you want
+                HitEffect.Play();
                 audioSource.PlayOneShot(hitSound);
 
                 if (CutCounter == CutRequired)
                 {
                     Debug.Log("Success!");
                     LongGrass.gameObject.SetActive(false);
-                    CutGrass.gameObject.SetActive(true);
+                    //CutGrass.gameObject.SetActive(true);
                     CutCounter = 0; // Reset the counter
+                    CompleteEffect.Play();
                     TriggerObject.SetActive(false);
                     audioSource.PlayOneShot(CompleteSound);
                     IncreaseWispEmotion();
+                    if (useFoundItem && FoundItem != null)
+                    {
+                        FoundItem.SetActive(true); // Activate or use FoundItem here
+                    }
                     StartCoroutine(ReturnToGame());
 
                 }
@@ -82,6 +101,15 @@ public class CutGrassMiniGame : MonoBehaviour
     {
         yield return new WaitForSeconds(ReturnDelay);
         MiniGameCanvas.gameObject.SetActive(false);
+        if (playerController != null)
+        {
+            playerController.enabled = true;
+        }
+        if (cinemachineCamera != null)
+        {
+            // Activate the Cinemachine camera
+            cinemachineCamera.gameObject.SetActive(false);
+        }
     }
 
     public void IncreaseWispEmotion()

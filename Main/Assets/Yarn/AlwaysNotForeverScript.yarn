@@ -372,6 +372,7 @@ I think I need a key.
 title: GateKey
 position: 999,-484
 ---
-That worked.
-I wonder where this leads?
+A strange key!
+I wonder what it opens?
+<<StrangeKey EventSystem>>
 ===
