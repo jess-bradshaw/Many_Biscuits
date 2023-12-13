@@ -1,5 +1,5 @@
 title: Start
-position: -972,-483
+position: -949,-486
 ---
 What is this place?
 Where is everyone?
@@ -7,10 +7,10 @@ Maybe I can find some answers
 What are all these gravestones?
 ===
 title: Goose
-position: -726,-484
+position: -717,-481
 ---
 <<if visited("Goose")>>
-<<jump GooseReturn>>
+<<jump GooseBrambles>>
 <<else>>
 Goose: Hi! I haven't seen you before. I'm Goose.
 Pleased to meet you Goose.
@@ -35,12 +35,21 @@ Goose: Don't go too far, I've missed talking.
         Me too.
     -> I'll try not to okay?
         Goose: Okay....i guess.
-        <<EmotionDown EventSystem>>
+        //<<EmotionDown EventSystem>>
         I won't go far.
 <<endif>>
 ===
+title: GooseBrambles
+position: -623,-231
+---
+<<if $BramblesAreCut>>
+    <<jump GooseReturn>>
+<<else>>
+    Goose: It's still a bit messy around here.
+<<endif>>
+===
 title: GooseReturn
-position: -439,-483
+position: -429,-652
 ---
 <<if visited("GooseReturn")>>
 <<jump GooseCheese>>
@@ -199,7 +208,7 @@ Goose: Which should i Choose?
         I'm not sure.
         Goose: I think I need some time.
         Okay, shall I come back?
-        Goose: Yes please.
+        Goose: I'll meet you at the gate when im ready.
         Take care Goose.
 <<endif>>
 ===
@@ -280,6 +289,7 @@ Whisper: Why would I tell you?
 <<endif>>
 ===
 title: WhisperReturn
+position: 4,-192
 ---
 Whisper: You again!
 Hi Whisper, I bet you really miss a warm fire?
@@ -304,7 +314,7 @@ title: Tinker
 position: 999,-484
 ---
 Tinker: Oh, Hey, You, Hi!
-You very happy
+You're very happy
 Tinker: It's been a while since I had someone else to talk to.
 What about Whisper?
 Tinker: Oh, they arent very talkative.
@@ -313,7 +323,7 @@ Tinker: They've been very upset since they got locked out of the house.
 Whats in the house?
 Tinker: All the creature comforts, a fire, a rug, a chair.
 Tinker: Things to sit on high.
-What in the house for Whsiper?
+What in the house for Whisper?
 Tinker: The fire, they would hover in front of it all the time.
 Who's home is it?
 Tinker: Well, yours.
