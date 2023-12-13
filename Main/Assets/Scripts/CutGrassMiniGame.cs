@@ -37,6 +37,8 @@ public class CutGrassMiniGame : MonoBehaviour
     public PerspectiveCharController playerController;
     public Animator playerAnimator;
     public CinemachineVirtualCamera cinemachineCamera;
+    [Header("Trigger to destroy when completed")]
+    public GameObject GameTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +109,7 @@ public class CutGrassMiniGame : MonoBehaviour
     {
         yield return new WaitForSeconds(ReturnDelay);
         MiniGameCanvas.gameObject.SetActive(false);
+        Destroy(GameTrigger);
         if (playerController != null)
         {
             playerController.enabled = true;

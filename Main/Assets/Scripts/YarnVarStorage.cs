@@ -19,9 +19,11 @@ public class YarnVarStorage : MonoBehaviour
     public bool TinkerChat;
     public bool GateIsOpen;
     public bool VillemoChat;
+    public bool VillemoClue;
     public bool TobyChat;
     public bool HaveNuts;
     public bool HaveCheese;
+    public bool GooseCheese;
     public CutGrassMiniGame BramblesAreCut;
     public InMemoryVariableStorage variableStorage;
 
@@ -35,9 +37,11 @@ public class YarnVarStorage : MonoBehaviour
         variableStorage.SetValue("$TinkerChat", TinkerChat);
         variableStorage.SetValue("$GateIsOpen", GateIsOpen);
         variableStorage.SetValue("$VillemoChat", VillemoChat);
+        variableStorage.SetValue("$VillemoClue", VillemoClue);
         variableStorage.SetValue("$TobyChat", TobyChat);
         variableStorage.SetValue("$HaveNuts", HaveNuts);
         variableStorage.SetValue("$HaveCheese", HaveCheese);
+        variableStorage.SetValue("$GooseCheese", GooseCheese);
         variableStorage.SetValue("$BramblesAreCut", BramblesAreCut.BramblesAreCut);
         // Check if the trigger condition is met and has not yet triggered
         if (!hasTriggered && wispEmotions.currentHeart >= triggerValue)
@@ -96,6 +100,13 @@ public class YarnVarStorage : MonoBehaviour
         VillemoChat = true;
     }
 
+    [YarnCommand("VillemoClue")]
+    public void VillemoTip()
+    // Update is called once per frame
+    {
+        VillemoClue = true;
+    }
+
     [YarnCommand("TobyChat")]
     public void Toby()
     // Update is called once per frame
@@ -115,5 +126,12 @@ public class YarnVarStorage : MonoBehaviour
     // Update is called once per frame
     {
         HaveCheese = true;
+    }
+
+    [YarnCommand("GooseCheese")]
+    public void GooseHasCheese()
+    // Update is called once per frame
+    {
+        GooseCheese = true;
     }
 }
