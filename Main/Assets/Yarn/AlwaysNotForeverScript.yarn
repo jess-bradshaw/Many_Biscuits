@@ -28,6 +28,7 @@ Goose: It is, I get a little sad if I think about it.
 Can I do something to help?
 Goose: Well, it is looking a little messy around here. Could you help?
 I'll see what I can do.
+<<GooseGrass EventSystem>>
 Goose: Don't go too far, I've missed talking.
     -> I won't, don't worry.
         Goose: Thank you, that makes me happy
@@ -538,7 +539,7 @@ title: GateOpen
 ---
 That did the trick.
 The gate is open now.
-<<GateIsOpen Eventsystem>>
+<<GateIsOpen EventSystem>>
 ===
 title: GateKey
 position: 999,-484

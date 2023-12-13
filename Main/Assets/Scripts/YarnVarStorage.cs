@@ -11,6 +11,12 @@ public class YarnVarStorage : MonoBehaviour
     public GameObject objectToEnable;  // GameObject to enable
     public int triggerValue = 50;        // The value to trigger the toggle
     private bool hasTriggered = false;   // To ensure the toggle happens only once
+    [Header("Make cutting grass possible for Goose")]
+    public GameObject GooseGrass;
+    [Header("Destroy Gate Dialogue Trigger once opened and open gate")]
+    public GameObject GateTrigger;
+    public Animation GateAnimL;
+    public Animation GateAnimR;
     [Header("Bool checks for Yarn Script")]
     public bool GateKey;
     public GameObject StrangeKey;
@@ -31,6 +37,7 @@ public class YarnVarStorage : MonoBehaviour
 
     void Update()
     {
+        variableStorage.SetValue("$GooseGrass", GooseGrass);
         variableStorage.SetValue("$HaveGateKey", GateKey);
         variableStorage.SetValue("$WhisperChat", WhisperChat);
         variableStorage.SetValue("$WhisperClue", WhisperClue);
@@ -87,10 +94,13 @@ public class YarnVarStorage : MonoBehaviour
     }
 
     [YarnCommand("GateIsOpen")]
-    public void FOpenedGate()
+    public void OpenedGate()
     // Update is called once per frame
     {
         GateIsOpen = true;
+        Destroy(GateTrigger);
+        GateAnimL.Play();
+        GateAnimR.Play();
     }
 
     [YarnCommand("VillemoChat")]
@@ -133,5 +143,12 @@ public class YarnVarStorage : MonoBehaviour
     // Update is called once per frame
     {
         GooseCheese = true;
+    }
+
+    [YarnCommand("GooseGrass")]
+    public void GooseCutGrass()
+    // Update is called once per frame
+    {
+        GooseGrass.SetActive(true);
     }
 }

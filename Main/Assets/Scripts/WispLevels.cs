@@ -10,7 +10,7 @@ public class WispLevels : MonoBehaviour
     public AudioClip EmotionSound2;
     public AudioClip CrossOverSound;
     public AudioSource audioSource;
-    public ParticleSystem Portal;
+    public GameObject Portal;
     public AudioClip PortalSound;
 
     [YarnCommand("EmotionUp")]
@@ -55,6 +55,7 @@ public class WispLevels : MonoBehaviour
     // Update is called once per frame
     {
         audioSource.PlayOneShot(PortalSound);
-        Portal.Play();
+        Portal.SetActive(true);
+        //Portal.Play();
     }
 }
