@@ -5,11 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: e95535d891596d04f80afe9dc459ade6
   - enabled: 0
-    path: Assets/Scenes/StoryFlow.unity
+    path: Assets/Scenes/Old/StoryFlow.unity
     guid: 79804e0771c6c5641a133a0b51866841
   - enabled: 1
     path: Assets/Scenes/StoryFlow_MiniGame.unity
