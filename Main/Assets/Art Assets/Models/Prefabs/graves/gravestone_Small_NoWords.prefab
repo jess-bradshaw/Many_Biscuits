@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8680166100784705507}
   - component: {fileID: 2908261573058451505}
   - component: {fileID: 8864477566818774240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2.06, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1723197518307431682
 PrefabInstance:
@@ -73,22 +73,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.68
+      value: -41.41017
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.31811237
+      value: 0.076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.73
+      value: -3.2059593
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000029504295
+      value: -0.19053587
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: -0.9816802
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
@@ -113,17 +113,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: -201.968
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5851063233388800735, guid: ef161fe92d48002419b5a9a8f55c26ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ef161fe92d48002419b5a9a8f55c26ff,
         type: 3}
       propertyPath: m_Name
-      value: Low-poly gravestone04
+      value: gravestone_Small_NoWords
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

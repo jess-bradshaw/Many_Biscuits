@@ -86,7 +86,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _BottomLine: 0.387
+    - _BottomLine: 0.466
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -115,14 +115,14 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TopLine: 0
+    - _TopLine: 0.232
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _scrollSpeed: 0.316
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColour: {r: 0, g: 0, b: 0, a: 1}
-    - _BottomColour: {r: 0, g: 0.32924604, b: 0.83137256, a: 1}
+    - _BaseColour: {r: 0, g: 0.5102136, b: 1, a: 1}
+    - _BottomColour: {r: 0.8187966, g: 3.5423431, b: 6.943396, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Edge_Color: {r: 0, g: 4.772202, b: 16, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
