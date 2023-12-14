@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class YarnVarStorage : MonoBehaviour
 {
+    [SerializeField] private string sceneName;
     [Header("Shortcut for skipping Dialogue")]
     public bool ShortCut;
     [Header("When Goose Is ready, replace Current Goose with Gate Goose")]
@@ -161,5 +163,12 @@ public class YarnVarStorage : MonoBehaviour
     // Update is called once per frame
     {
         ShortCut = true;
+    }
+
+    [YarnCommand("LoadMenu")]
+    public void MenuLoad()
+    // Update is called once per frame
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
