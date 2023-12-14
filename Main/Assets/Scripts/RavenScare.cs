@@ -4,37 +4,30 @@ using UnityEngine;
 
 public class RavenScare : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if collider is triggered {on trigger enter}
-        // then scare the raven + mark as scared away 
-
-        //if raven present and Wisp in trigger hold then scared emote. + decrease emotions by one level only. 
-    }
-
-
-    public GameObject particlePoof; 
+    //public GameObject particlePoof; 
     public GameObject standingRaven; 
     public GameObject flyingRaven; 
     public GameObject RavensPresent; 
     public AudioSource RavenLeave; 
+    public Animator LeavingAnimation; 
 
     void OnTriggerEnter ()
     {
        
            RavensPresent.SetActive(false); 
-           particlePoof.SetActive(true); 
+         //  particlePoof.SetActive(true); 
            standingRaven.SetActive(false); 
            flyingRaven.SetActive(true); 
+           LeavingAnimation.enabled = true; 
            RavenLeave.Play(); 
            // increase wisp emotions?
     }
+
+   void FlewAway ()
+    {
+        flyingRaven.SetActive(false); 
+    }
+    
     
 }
