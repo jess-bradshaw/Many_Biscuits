@@ -6,14 +6,19 @@ using Cinemachine;
 
 public class CutGrassMiniGame : MonoBehaviour
 {
+    [Header("Skill Check Hit Area")]
     [SerializeField] private float BarSpeed = 0.5f;
     [SerializeField] private float HitAreaA = 100.0f;
     [SerializeField] private float HitAreaB = 100.0f;
     [SerializeField] private Image SkillBar;
     [SerializeField] private GameObject LongGrass;
+    [Header("Spawns Item On Success")]
     public bool useFoundItem;
     [SerializeField] private GameObject FoundItem;
+    [Header("Mini Game is Trigger On Other Script")]
+    public bool BramblesAreCut;
     //[SerializeField] private Image CutGrass;
+    [Header("Skill Check Setup")]
     public KeyCode actionKey = KeyCode.Space;
     private bool isIncreasing = true;
     private int CutCounter = 0;
@@ -32,6 +37,8 @@ public class CutGrassMiniGame : MonoBehaviour
     public PerspectiveCharController playerController;
     public Animator playerAnimator;
     public CinemachineVirtualCamera cinemachineCamera;
+    [Header("Trigger to destroy when completed")]
+    public GameObject GameTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +84,7 @@ public class CutGrassMiniGame : MonoBehaviour
                     CutCounter = 0; // Reset the counter
                     CompleteEffect.Play();
                     TriggerObject.SetActive(false);
+                    BramblesAreCut = true;
                     audioSource.PlayOneShot(CompleteSound);
                     IncreaseWispEmotion();
                     if (useFoundItem && FoundItem != null)
@@ -101,6 +109,7 @@ public class CutGrassMiniGame : MonoBehaviour
     {
         yield return new WaitForSeconds(ReturnDelay);
         MiniGameCanvas.gameObject.SetActive(false);
+        Destroy(GameTrigger);
         if (playerController != null)
         {
             playerController.enabled = true;

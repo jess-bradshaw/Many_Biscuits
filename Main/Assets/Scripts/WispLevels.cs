@@ -10,9 +10,8 @@ public class WispLevels : MonoBehaviour
     public AudioClip EmotionSound2;
     public AudioClip CrossOverSound;
     public AudioSource audioSource;
-    public ParticleSystem Portal;
+    public GameObject Portal;
     public AudioClip PortalSound;
-    public GameObject StrangeKey;
 
     [YarnCommand("EmotionUp")]
     // Update is called once per frame
@@ -56,15 +55,7 @@ public class WispLevels : MonoBehaviour
     // Update is called once per frame
     {
         audioSource.PlayOneShot(PortalSound);
-        Portal.Play();
+        Portal.SetActive(true);
+        //Portal.Play();
     }
-
-    [YarnCommand("StrangeKey")]
-    public void FoundStrangeKey()
-    // Update is called once per frame
-    {
-        StrangeKey.SetActive(false);
-    }
-
-
 }

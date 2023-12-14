@@ -5033,7 +5033,6 @@ GameObject:
   - component: {fileID: 5620821118817996491}
   - component: {fileID: 5177908519053102440}
   - component: {fileID: 197955806092414475}
-  - component: {fileID: 2674796185052072819}
   - component: {fileID: 1216122458488742383}
   m_Layer: 0
   m_Name: WispTrigger
@@ -5130,19 +5129,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.02
   m_Center: {x: 0, y: -0.00029200967, z: -0.00014183763}
---- !u!114 &2674796185052072819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5625015720609722290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c6ff5c95fa454886bd32fb72332d5c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversationStartNode: Goose
 --- !u!114 &1216122458488742383
 MonoBehaviour:
   m_ObjectHideFlags: 0

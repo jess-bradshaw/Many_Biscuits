@@ -1,16 +1,21 @@
 title: Start
-position: -972,-483
+position: -949,-486
 ---
 What is this place?
 Where is everyone?
 Maybe I can find some answers
 What are all these gravestones?
+//<<ShortCut EventSystem>>
 ===
 title: Goose
-position: -726,-484
+position: -717,-481
 ---
-<<if visited("Goose")>>
-<<jump GooseReturn>>
+//move around to test dialogue
+<<if $ShortCut>>
+    <<jump GooseReady>>
+<<elseif visited("Goose")>>
+//<<if visited("Goose")>>
+    <<jump GooseBrambles>>
 <<else>>
 Goose: Hi! I haven't seen you before. I'm Goose.
 Pleased to meet you Goose.
@@ -28,19 +33,29 @@ Goose: It is, I get a little sad if I think about it.
 Can I do something to help?
 Goose: Well, it is looking a little messy around here. Could you help?
 I'll see what I can do.
+<<GooseGrass EventSystem>>
 Goose: Don't go too far, I've missed talking.
     -> I won't, don't worry.
         Goose: Thank you, that makes me happy
-        <<EmotionUp EventSystem>>
+        //<<EmotionUp EventSystem>>
         Me too.
     -> I'll try not to okay?
         Goose: Okay....i guess.
-        <<EmotionDown EventSystem>>
+        //<<EmotionDown EventSystem>>
         I won't go far.
 <<endif>>
 ===
+title: GooseBrambles
+position: -623,-231
+---
+<<if $BramblesAreCut>>
+    <<jump GooseReturn>>
+<<else>>
+    Goose: It's still a bit messy around here.
+<<endif>>
+===
 title: GooseReturn
-position: -439,-483
+position: -429,-652
 ---
 <<if visited("GooseReturn")>>
 <<jump GooseCheese>>
@@ -82,9 +97,10 @@ Goose: Don't forget about me.
 title: GooseCheese
 position: -165,-486
 ---
-<<if visited("GooseCheese")>>
+// must have found the key and been to new area and spoke to villemo and toby
+<<if $GooseCheese>>
 <<jump GooseRemembers>>
-<<else>>
+<<elseif $VillemoClue>>
 Goose: Did you find anything?
 I found a strange area.
 Goose: Strange?
@@ -98,7 +114,7 @@ There isn't much there at the moment, but there were some other wisps who seemed
 Goose: Maybe they got trapped when it was closed.
 Maybe, but they are free now to roam.
 Goose: Maybe I'll go take a look, but I'm happy here now. 
-<<EmotionUp EventSystem>>
+//<<EmotionUp EventSystem>>
 I did find some other things though!
 Goose: Really?
 Yes, would you like..
@@ -113,24 +129,31 @@ Yes, would you like..
         Goose: A voice...on the wind. Calling. But who too?
         Maybe it was for you?
         Goose: But why?
-        I don't know. I'll see if I can find out.
         <<EmotionUp EventSystem>>
+        <<GooseCheese EventSystem>>
+        <<jump GooseRemembers>>
     -> Some nuts
         Goose: Those don't look very nice.
-        <<EmotionDown EventSystem>>
+        //<<EmotionDown EventSystem>>
         Goose: I don't think i can actually eat.
         Does it help you remember anything? 
         Goose: I dont think so no.
-        <<EmotionDown EventSystem>> 
+        //<<EmotionDown EventSystem>>
+<<else>>
+Goose: Have you found anything?
+I'm still looking.
+Goose: If you see any other wisps like me, make sure you speak to them.
+Goose: They probably haven't seen anyone new in a long time.
+I will
 <<endif>>
 ===
 title: GooseRemembers
 position: 131,-486
 ---
+//must have been given clue from villemo
 <<if visited("GooseRemembers")>>
 <<jump GooseReady>>
 <<else>>
-Goose: Hey, where have you been?
 I've been speaking to the other wisps.
 They gave me some tips on how to help you.
 Goose: Help me?
@@ -167,12 +190,12 @@ Goose: Which should i Choose?
         I'm not sure.
         Goose: I think I need some time.
         Okay, shall I come back?
-        Goose: I'll meet you at the gate when im ready.
+        Goose: Yes please.
         Take care Goose.
     -> Sad
         Goose: I don't want to be sad.
         Then focus on the other.
-        <<EmotionDown EventSystem>> 
+        //<<EmotionDown EventSystem>> 
         What made you happy?
         Goose: Well, cheese made me happy.
         Thats a good idea.
@@ -206,7 +229,9 @@ Goose: Which should i Choose?
 title: GooseReady
 position: 712,-483
 ---
+//have a time check boolean!!!! else, i need more time
 Goose: I had some time to think.
+<<EmotionUp EventSystem>>
 Goose: It was different to before.
 Why?
 Goose: Well, now I remember things.
@@ -215,13 +240,17 @@ Goose: Or how long I've been here.
 Goose: Time doesn't seem to work here.
 Goose: But now, I have a sense of belonging.
 Goose: But its missing something.
-I'm here.
+You look different.
+Goose: Really?
+Yes, you have an aura around you.
+Is that what you are missing?
 Goose: This is something else.
 Goose: I think I feel myself being pulled to the arch.
 Should we go and see whats there?
 Goose: I think so, but I'm scared.
-Don't be, I'll be with you every step.
+Don't be, Follow me, I'll be with you every step.
 Goose: Thank you.
+//move goose
 ===
 title: GooseGoodbye
 position: 999,-484
@@ -231,6 +260,7 @@ What is it?
 Goose: I think it's time for me to go.
 Where?
 Goose: Across the rainbow bridge.
+<<Portal EventSystem>>
 Where does it go?
 Goose: I think to a place where I'll be with my friends and owner.
 Goose: I wont be alone ever again.
@@ -262,11 +292,24 @@ I'm going to miss you, Goose.
 Goose: And I'll miss you too
 I hope you find your forever home too.
 <<CrossOverSound EventSystem>>
+Goose: Wait, something's wrong.
+Goose: I'm missimg someone!
+Someone else?
+Goose: Yes, someone has to cross over with me.
+Goose: But they aren't here.
+Who could it be?
+Goose: There has to be an answer.
+Goose: But you wont find it in this demo.
+Goose: Thank you for playing.
+Goose: I hope you will return when we launch in 2025.
+
+// add in something wrong
 ===
 title: Whisper
 position: 999,-484
 ---
-<<if visited("Whisper")>>
+// add Tinker check here
+<<if $TinkerChat>>
 <<jump WhisperReturn>>
 <<else>>
 Whisper: What do you want?
@@ -277,11 +320,16 @@ I bet you see everything where you are.
 Whisper: Maybe I do, maybe I don't.
 Did you see something?
 Whisper: Why would I tell you?
+<<WhisperChat EventSystem>>
 <<endif>>
 ===
 title: WhisperReturn
+position: 4,-192
 ---
-Whisper: You again!
+// add in whisper return check, for random dialogue
+<<if visited("WhisperReturn")>>
+<<jump WhisperRandom>>
+<<else>>
 Hi Whisper, I bet you really miss a warm fire?
 Whisper: What did Tinker tell you?
 Just if you help me, I can help you.
@@ -299,12 +347,20 @@ Whisper: Maybe.
 I'll go have a look.
 Whisper: I look forward to that warm fire.
 Thank you.
+<<endif>>
+===
+title: WhisperRandom
+---
+Whisper: I cant wait for the warm fire again. 
 ===
 title: Tinker
 position: 999,-484
 ---
+<<if visited("Tinker")>>
+<<jump TinkerRandom>>
+<<elseif $WhisperChat>>
 Tinker: Oh, Hey, You, Hi!
-You very happy
+You're very happy
 Tinker: It's been a while since I had someone else to talk to.
 What about Whisper?
 Tinker: Oh, they arent very talkative.
@@ -313,7 +369,7 @@ Tinker: They've been very upset since they got locked out of the house.
 Whats in the house?
 Tinker: All the creature comforts, a fire, a rug, a chair.
 Tinker: Things to sit on high.
-What in the house for Whsiper?
+What in the house for Whisper?
 Tinker: The fire, they would hover in front of it all the time.
 Who's home is it?
 Tinker: Well, yours.
@@ -332,21 +388,139 @@ Tinker: It's okay. It's been that way as long as I remember.
 I'll see if I can find the key.
 Take care Tinker.
 Tinker: Bye.
+<<TinkerChat EventSystem>>
+<<else>>
+Tinker: Oh, Hey, You, Hi!
+You're very happy
+Tinker: It's been a while since I had someone else to talk to.
+Oh thats a shame.
+Tinker: I know, even Whisper won't talk to me.
+WHisper?
+Tinker: Yeah, they are over there. Being grumpy.
+Why?
+Tinker: They've been very upset since they got locked out of the house.
+Whats in the house?
+Tinker: All the creature comforts, a fire, a rug, a chair.
+Tinker: Things to sit on high.
+What in the house for Whisper?
+Tinker: The fire, they would hover in front of it all the time.
+Who's home is it?
+Tinker: Well, yours.
+Mine?
+Tinker: Well, I think so.
+Tinker: It looks different to how I remember it.
+How long have you been here?
+Tinker: I don't know. Its hard to keep a track on.
+The house is locked, I think I need a key.
+Have you seen one around?
+Tinker: Oh, I can't help you there.
+Why not?
+Tinker: I dont see very well.
+Oh, I'm sorry.
+Tinker: It's okay. It's been that way as long as I remember.
+I'll see if I can find the key.
+Take care Tinker.
+Tinker: Bye.
+<<TinkerChat EventSystem>>
+<<endif>>
+===
+title: TinkerRandom
+---
+Tinker: What day is it?
+Tinker: Oh, its everyday here!
 ===
 title: Villemo
 position: 999,-484
 ---
-filler text
+//check for Toby
+<<if $TobyChat>>
+<<jump VillemoWise>>
+<<else>>
+Villemo: Oh great, another one.
+Sorry?
+Villemo: On your way.
+Excuse me?
+<<VillemoChat EventSystem>>
+<<endif>>
+===
+title: VillemoWise
+position: 999,-484
+---
+<<if visited("VillemoWise")>>
+<<jump VillemoRandom>>
+<<else>>
+//check for Toby
+Are you "Villemo the Wise"?
+Villemo: I might be, who's asking?
+I'm the new "keeper", I'm here to help you "across"
+Villemo: You clearly don't know what you're doing, let me enlighten you.
+Thank you "oh wise one".
+Villemo: Don't mention it. All wisps here are spirits of pets that want to cross the rainbow bridge, but the journey affected our memory.
+Villemo: By talking to us, getting us our favourite treats and cleaning graves and shooing ravens,
+Villemo: will get in the right emotional state to remember who we are and help us cross over.
+I can do that!
+Villemo: Sometimes focusing on an emotion can help us too.
+Oh, thank you. I'm sure that will come in handy.
+Villemo: Let's see. Oh, would you like this cheese? It makes me gassy.
+Sure. Thank you Villemo!
+<<HaveCheese EventSystem>>
+<<VillemoTip EventSystem>>
+<<endif>>
+===
+title: VillemoRandom
+---
+Villemo: Come back when you have something important.
 ===
 title: Toby
 position: 999,-484
 ---
-filler text
+// check to see if spoken to villemo or not, have diff option if not
+<<if visited("Toby")>>
+<<jump TobyRandom>>
+<<elseif $VillemoChat>>
+Toby: Hi. You must be the replacement. My name is Toby.
+Hi Toby, nice to meet you. 
+Replacement?
+Toby: Yeah, for the previous keeper. Friendly chap. Shame he had to leave before he could help us all across. Maybe you can help us?
+Of course! How do I do that?
+Toby: Lovely! Villemo will know, he's been here a long time.
+He doesn't seem very talkative...
+Toby: Just stroke his ego a bit, he'll talk.
+Thanks Toby, I'll give that a go!
+Toby: Oh, would you like these? I can't chew them very well.
+Sure. Thank you Toby!
+<<TobyChat EventSystem>>
+<<HaveNuts EventSystem>>
+<<else>>
+Toby: Hi. You must be the replacement. My name is Toby.
+Hi Toby, nice to meet you. 
+Replacement?
+Toby: Yeah, for the previous keeper. Friendly chap. Shame he had to leave before he could help us all across. Maybe you can help us?
+Of course! How do I do that?
+Toby: Lovely! Villemo will know, he's been here a long time.
+Who is Villemo?
+Toby: The other wisp that got stuck here with me.
+Oh, I haven't spoken to him yet.
+Toby: That makes me feel special.
+I'll speak to him next.
+Toby: Oh, be careful, he's not very talkative.
+Toby: Just stroke his ego a bit, he'll talk.
+Thanks Toby, I'll give that a go!
+Toby: Oh, would you like these nuts? I can't chew them very well.
+Sure. Thank you Toby!
+<<TobyChat EventSystem>>
+<<HaveNuts EventSystem>>
+<<endif>>
+===
+title: TobyRandom
+---
+Toby: I can't wait to cross over!
 ===
 title: Home
 position: 999,-484
 ---
-<<if visited("Home")>>
+// check for if key or not
+<<if $HaveGateKey>>
 <<jump HomeKey>>
 <<else>>
 It's locked.
@@ -362,16 +536,24 @@ I wonder what else it opens.
 title: Gate
 position: 999,-484
 ---
-<<if visited("Gate")>>
-<<jump GateKey>>
+//check for key, if have, add open dialogue
+<<if $HaveGateKey>>
+<<jump GateOpen>>
 <<else>>
 It's locked.
 I think I need a key.
 <<endif>>
 ===
+title: GateOpen
+---
+That did the trick.
+The gate is open now.
+<<GateIsOpen EventSystem>>
+===
 title: GateKey
 position: 999,-484
 ---
+// add check for having key
 A strange key!
 I wonder what it opens?
 <<StrangeKey EventSystem>>
