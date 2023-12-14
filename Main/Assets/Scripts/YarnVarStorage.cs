@@ -5,6 +5,8 @@ using Yarn.Unity;
 
 public class YarnVarStorage : MonoBehaviour
 {
+    [Header("Shortcut for skipping Dialogue")]
+    public bool ShortCut;
     [Header("When Goose Is ready, replace Current Goose with Gate Goose")]
     public WispEmotion wispEmotions; // Reference to the WispEmotions script
     public GameObject objectToDisable; // GameObject to disable
@@ -32,11 +34,13 @@ public class YarnVarStorage : MonoBehaviour
     public bool GooseCheese;
     public CutGrassMiniGame BramblesAreCut;
     public InMemoryVariableStorage variableStorage;
+    
 
 
 
     void Update()
     {
+        variableStorage.SetValue("$ShortCut", ShortCut);
         variableStorage.SetValue("$GooseGrass", GooseGrass);
         variableStorage.SetValue("$HaveGateKey", GateKey);
         variableStorage.SetValue("$WhisperChat", WhisperChat);
@@ -150,5 +154,12 @@ public class YarnVarStorage : MonoBehaviour
     // Update is called once per frame
     {
         GooseGrass.SetActive(true);
+    }
+
+    [YarnCommand("ShortCut")]
+    public void ShortcutMe()
+    // Update is called once per frame
+    {
+        ShortCut = true;
     }
 }

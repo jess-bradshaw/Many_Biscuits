@@ -5,12 +5,17 @@ What is this place?
 Where is everyone?
 Maybe I can find some answers
 What are all these gravestones?
+//<<ShortCut EventSystem>>
 ===
 title: Goose
 position: -717,-481
 ---
-<<if visited("Goose")>>
-<<jump GooseBrambles>>
+//move around to test dialogue
+<<if $ShortCut>>
+    <<jump GooseReady>>
+<<elseif visited("Goose")>>
+//<<if visited("Goose")>>
+    <<jump GooseBrambles>>
 <<else>>
 Goose: Hi! I haven't seen you before. I'm Goose.
 Pleased to meet you Goose.
@@ -32,7 +37,7 @@ I'll see what I can do.
 Goose: Don't go too far, I've missed talking.
     -> I won't, don't worry.
         Goose: Thank you, that makes me happy
-        <<EmotionUp EventSystem>>
+        //<<EmotionUp EventSystem>>
         Me too.
     -> I'll try not to okay?
         Goose: Okay....i guess.
@@ -109,7 +114,7 @@ There isn't much there at the moment, but there were some other wisps who seemed
 Goose: Maybe they got trapped when it was closed.
 Maybe, but they are free now to roam.
 Goose: Maybe I'll go take a look, but I'm happy here now. 
-<<EmotionUp EventSystem>>
+//<<EmotionUp EventSystem>>
 I did find some other things though!
 Goose: Really?
 Yes, would you like..
@@ -129,11 +134,11 @@ Yes, would you like..
         <<jump GooseRemembers>>
     -> Some nuts
         Goose: Those don't look very nice.
-        <<EmotionDown EventSystem>>
+        //<<EmotionDown EventSystem>>
         Goose: I don't think i can actually eat.
         Does it help you remember anything? 
         Goose: I dont think so no.
-        <<EmotionDown EventSystem>>
+        //<<EmotionDown EventSystem>>
 <<else>>
 Goose: Have you found anything?
 I'm still looking.
@@ -190,7 +195,7 @@ Goose: Which should i Choose?
     -> Sad
         Goose: I don't want to be sad.
         Then focus on the other.
-        <<EmotionDown EventSystem>> 
+        //<<EmotionDown EventSystem>> 
         What made you happy?
         Goose: Well, cheese made me happy.
         Thats a good idea.
@@ -226,6 +231,7 @@ position: 712,-483
 ---
 //have a time check boolean!!!! else, i need more time
 Goose: I had some time to think.
+<<EmotionUp EventSystem>>
 Goose: It was different to before.
 Why?
 Goose: Well, now I remember things.
@@ -234,12 +240,15 @@ Goose: Or how long I've been here.
 Goose: Time doesn't seem to work here.
 Goose: But now, I have a sense of belonging.
 Goose: But its missing something.
-I'm here.
+You look different.
+Goose: Really?
+Yes, you have an aura around you.
+Is that what you are missing?
 Goose: This is something else.
 Goose: I think I feel myself being pulled to the arch.
 Should we go and see whats there?
 Goose: I think so, but I'm scared.
-Don't be, I'll be with you every step.
+Don't be, Follow me, I'll be with you every step.
 Goose: Thank you.
 //move goose
 ===
