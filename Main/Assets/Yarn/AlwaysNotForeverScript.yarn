@@ -5,7 +5,6 @@ What is this place?
 Where is everyone?
 Maybe I can find some answers
 What are all these gravestones?
-//<<ShortCut EventSystem>>
 ===
 title: Goose
 position: -717,-481
@@ -126,7 +125,7 @@ Yes, would you like..
         Goose: Listen.
         <<EmotionSound EventSystem>>
         What was that?
-        Goose: A voice...on the wind. Calling. But who too?
+        Goose: Voices...on the wind. Calling. But who too?
         Maybe it was for you?
         Goose: But why?
         <<EmotionUp EventSystem>>
@@ -183,7 +182,7 @@ Goose: Which should i Choose?
         Goose: Happy, excited....
         Goose: Wait, there's something else.
         What is it?
-        Goose: I can hear my name being called.
+        Goose: I can hear something familiar.
         <<EmotionSound2 EventSystem>>
         I hear it too.
         Goose: What does it mean?
@@ -215,7 +214,7 @@ Goose: Which should i Choose?
         Goose: Happy, excited....
         Goose: Wait, there's something else.
         What is it?
-        Goose: I can hear my name being called.
+        Goose: I can hear something familiar.
         <<EmotionSound2 EventSystem>>
         I hear it too.
         Goose: What does it mean?
@@ -293,7 +292,7 @@ Goose: And I'll miss you too
 I hope you find your forever home too.
 <<CrossOverSound EventSystem>>
 Goose: Wait, something's wrong.
-Goose: I'm missimg someone!
+Goose: I'm missing someone!
 Someone else?
 Goose: Yes, someone has to cross over with me.
 Goose: But they aren't here.
@@ -302,6 +301,7 @@ Goose: There has to be an answer.
 Goose: But you wont find it in this demo.
 Goose: Thank you for playing.
 Goose: I hope you will return when we launch in 2025.
+<<LoadMenu EventSystem>>
 
 // add in something wrong
 ===
@@ -463,8 +463,8 @@ Villemo: Sometimes focusing on an emotion can help us too.
 Oh, thank you. I'm sure that will come in handy.
 Villemo: Let's see. Oh, would you like this cheese? It makes me gassy.
 Sure. Thank you Villemo!
-<<HaveCheese EventSystem>>
-<<VillemoTip EventSystem>>
+<<GetCheese EventSystem>>
+<<VillemoClue EventSystem>>
 <<endif>>
 ===
 title: VillemoRandom
@@ -490,7 +490,7 @@ Thanks Toby, I'll give that a go!
 Toby: Oh, would you like these? I can't chew them very well.
 Sure. Thank you Toby!
 <<TobyChat EventSystem>>
-<<HaveNuts EventSystem>>
+<<GetNuts EventSystem>>
 <<else>>
 Toby: Hi. You must be the replacement. My name is Toby.
 Hi Toby, nice to meet you. 
@@ -506,7 +506,7 @@ I'll speak to him next.
 Toby: Oh, be careful, he's not very talkative.
 Toby: Just stroke his ego a bit, he'll talk.
 Thanks Toby, I'll give that a go!
-Toby: Oh, would you like these nuts? I can't chew them very well.
+Toby: Oh, would you like these cashew nuts? I can't chew them very well.
 Sure. Thank you Toby!
 <<TobyChat EventSystem>>
 <<HaveNuts EventSystem>>
